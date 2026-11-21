@@ -1,0 +1,251 @@
+/* ========================================================
+   Redefine Music Station (APlayer + MetingJS) Enhancements
+   ======================================================== */
+
+/* Reset outer container to prevent light outline / ghost border */
+.aplayer.aplayer-fixed {
+  z-index: 99999 !important;
+  display: block !important;
+  position: fixed !important;
+  bottom: 16px !important;
+  left: 16px !important;
+  max-width: 420px !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Master Player Bar (Card) */
+.aplayer.aplayer-fixed .aplayer-body {
+  position: fixed !important;
+  bottom: 16px !important;
+  left: 16px !important;
+  z-index: 99999 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  overflow: hidden !important;
+}
+
+/* Cover Image */
+.aplayer.aplayer-fixed .aplayer-pic {
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+/* Force unhide the info container and REMOVE any border-top/box-shadow */
+.aplayer .aplayer-info,
+.aplayer.aplayer-fixed .aplayer-info {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  border: none !important;
+  border-top: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Track Title & Artist styling */
+.aplayer .aplayer-info .aplayer-music {
+  display: block !important;
+  height: 22px !important;
+  line-height: 22px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  margin: 0 0 10px 5px !important;
+  padding-right: 110px !important;
+}
+
+.aplayer .aplayer-info .aplayer-music .aplayer-title {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #1f2937 !important;
+}
+
+.aplayer .aplayer-info .aplayer-music .aplayer-author {
+  font-size: 11px !important;
+  color: #6b7280 !important;
+  margin-left: 6px !important;
+}
+
+/* Controller & Progress Bar */
+.aplayer .aplayer-info .aplayer-controller {
+  display: flex !important;
+  align-items: center !important;
+  position: relative !important;
+}
+
+.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap {
+  flex: 1 !important;
+  padding: 4px 0 !important;
+  margin: 0 5px 0 5px !important;
+  cursor: pointer !important;
+}
+
+/* Control buttons (Back, Forward, LRC, Menu) */
+.aplayer.aplayer-fixed .aplayer-icon-back,
+.aplayer.aplayer-fixed .aplayer-icon-play,
+.aplayer.aplayer-fixed .aplayer-icon-forward,
+.aplayer.aplayer-fixed .aplayer-icon-lrc,
+.aplayer.aplayer-fixed .aplayer-icon-menu {
+  display: inline-block !important;
+  position: absolute !important;
+  bottom: 25px !important;
+  width: 18px !important;
+  height: 18px !important;
+  cursor: pointer !important;
+}
+
+.aplayer.aplayer-fixed .aplayer-icon-lrc {
+  right: 92px !important;
+}
+
+.aplayer.aplayer-fixed .aplayer-icon-back {
+  right: 68px !important;
+}
+
+.aplayer.aplayer-fixed .aplayer-icon-play {
+  right: 46px !important;
+}
+
+.aplayer.aplayer-fixed .aplayer-icon-forward {
+  right: 24px !important;
+}
+
+.aplayer.aplayer-fixed .aplayer-icon-menu {
+  right: 4px !important;
+}
+
+/* Mini switcher tab */
+.aplayer.aplayer-fixed .aplayer-miniswitcher {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  cursor: pointer !important;
+  border-radius: 0 !important;
+  border: none !important;
+  width: 22px !important;
+  background: rgba(220, 220, 220, 0.7) !important;
+  transition: background 0.2s ease !important;
+}
+
+.aplayer.aplayer-fixed .aplayer-miniswitcher:hover {
+  background: var(--primary-color, #A31F34) !important;
+}
+
+.aplayer.aplayer-fixed .aplayer-miniswitcher:hover .aplayer-icon path {
+  fill: #fff !important;
+}
+
+/* Playlist panel */
+.aplayer.aplayer-fixed .aplayer-list {
+  border-radius: 12px 12px 0 0 !important;
+  max-height: 260px !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  margin-bottom: 75px !important;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* ========================================================
+   Dark Mode Styling
+   ======================================================== */
+html.dark .aplayer.aplayer-fixed {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+html.dark .aplayer.aplayer-fixed .aplayer-body {
+  background: rgba(24, 24, 27, 0.95) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6) !important;
+}
+
+html.dark .aplayer.aplayer-fixed .aplayer-info {
+  background: transparent !important;
+  border: none !important;
+  border-top: none !important;
+}
+
+html.dark .aplayer .aplayer-info .aplayer-music .aplayer-title {
+  color: #f4f4f5 !important;
+}
+
+html.dark .aplayer .aplayer-info .aplayer-music .aplayer-author {
+  color: #a1a1aa !important;
+}
+
+html.dark .aplayer .aplayer-info .aplayer-controller .aplayer-time {
+  color: #a1a1aa !important;
+}
+
+html.dark .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path,
+html.dark .aplayer .aplayer-icon-back path,
+html.dark .aplayer .aplayer-icon-forward path,
+html.dark .aplayer .aplayer-icon-lrc path,
+html.dark .aplayer .aplayer-icon-menu path {
+  fill: #d4d4d8 !important;
+}
+
+html.dark .aplayer.aplayer-fixed .aplayer-miniswitcher {
+  background: rgba(45, 45, 50, 0.9) !important;
+}
+
+html.dark .aplayer .aplayer-miniswitcher .aplayer-icon path {
+  fill: #a1a1aa !important;
+}
+
+html.dark .aplayer .aplayer-list {
+  background: rgba(24, 24, 27, 0.96) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+html.dark .aplayer .aplayer-list ol li {
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+  color: #a1a1aa !important;
+}
+
+html.dark .aplayer .aplayer-list ol li:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #fafafa !important;
+}
+
+html.dark .aplayer .aplayer-list ol li.aplayer-list-light {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+}
+
+html.dark .aplayer .aplayer-lrc:before,
+html.dark .aplayer .aplayer-lrc:after {
+  background: none !important;
+}
+
+html.dark .aplayer .aplayer-lrc p {
+  color: #cbd5e1 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6) !important;
+}
+
+html.dark .aplayer .aplayer-lrc p.aplayer-lrc-current {
+  color: #ffffff !important;
+}
+
+/* Mobile display */
+@media (max-width: 768px) {
+  .aplayer.aplayer-fixed {
+    display: block !important;
+    bottom: 12px !important;
+    left: 12px !important;
+    max-width: calc(100vw - 24px) !important;
+  }
+  .aplayer.aplayer-fixed .aplayer-body {
+    bottom: 12px !important;
+    left: 12px !important;
+    max-width: calc(100vw - 24px) !important;
+  }
+}
